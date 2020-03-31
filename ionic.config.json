@@ -1,0 +1,7 @@
+{
+  "name": "HeartStone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
