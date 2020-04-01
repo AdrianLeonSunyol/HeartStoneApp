@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>About Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Práctica 1 con IONIC</ion-card-subtitle>
+      <ion-card-title>Gestión de Calidad</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ul>
+        <li>nombre: {{appData.nombre}}</li>
+        <li>fecha: {{appData.fecha}}</li>
+        <li>version: {{appData.version}}</li>
+        <li>autor: {{appData.autor}}</li>
+      </ul>
+      <ion-item>
+        <ion-icon name="walk" slot="start"></ion-icon>
+        <ion-label><a href="{{appData.repositorio}}">Repositorio</a></ion-label>
+      </ion-item>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

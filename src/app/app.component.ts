@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, ToastController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -13,9 +13,20 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    public toastController: ToastController
   ) {
     this.initializeApp();
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      header: 'Bienvenida',
+      position: "top",
+      message: 'Bienvenido a nuestra aplicación! Utiliza el menú de navegación inferior y superior para desplazarte por ella! Disfrútalo',
+      duration: 3000
+    });
+    toast.present();
   }
 
   initializeApp() {
@@ -23,5 +34,6 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    this.presentToast();
   }
 }
