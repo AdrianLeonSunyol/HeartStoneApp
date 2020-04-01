@@ -15,11 +15,5 @@ import { CardDecksComponent } from "./card-decks.component";
   declarations: [CardDecksComponent],
 })
 export class CardDecksModule {
-  readonly cardDecks: string [] = [
-    `Druid`,
-    `Mage`,
-    `Warrior`,
-    `Rogue`,
-    `Shaman`
-  ];
+  
  }

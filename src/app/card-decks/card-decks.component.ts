@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-decks.component.scss'],
 })
 export class CardDecksComponent {
+  readonly cardDecks: string [] = [
+    `Druid`,
+    `Mage`,
+    `Warrior`,
+    `Rogue`,
+    `Shaman`
+  ];
   constructor() {}
 }
