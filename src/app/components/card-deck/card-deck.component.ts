@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CardDeck } from '../models';
-import { ToastController } from '@ionic/angular';
+import { CardDeck } from '../../models';
 
 @Component({
   selector: 'app-card-deck',

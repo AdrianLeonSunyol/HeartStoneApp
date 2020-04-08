@@ -14,16 +14,6 @@ export class MenuComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Tab 2',
-      url: '/tabs/tab2',
-      icon: 'flash'
-    },
-    {
-      title: 'Tab 3',
-      url: '/tabs/tab3',
-      icon: 'apps'
-    },
-    {
       title: 'About',
       url: '/tabs/about',
       icon: 'information'

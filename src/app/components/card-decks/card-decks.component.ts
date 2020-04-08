@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardDeck } from '../models';
+import { CardDeck } from '../../models';
 
 @Component({
   selector: 'app-card-decks',
