@@ -1,12 +1,3 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Card Decks</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-menu contentId="content">
   <ion-header>
     <ion-toolbar color="primary">
@@ -34,30 +25,5 @@
     </div>
   </ion-content>
 </ion-menu>
-
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="cards">
-      <ion-icon name="flash"></ion-icon>
-      <ion-label>Card Deks</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab2">
-      <ion-icon name="apps"></ion-icon>
-      <ion-label>Tab 2</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab3">
-      <ion-icon name="square"></ion-icon>
-      <ion-label>Tab 3</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="about">
-      <ion-icon name="information"></ion-icon>
-      <ion-label>About Us</ion-label>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs>
 
 <ion-router-outlet id="content" main></ion-router-outlet>

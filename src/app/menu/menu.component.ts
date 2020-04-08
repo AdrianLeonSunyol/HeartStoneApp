@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-tabs',
-  templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
 })
-export class TabsPage {
-
+export class MenuComponent implements OnInit {
   readonly pages = [
     {
       title: 'Card Decks',
@@ -30,6 +29,9 @@ export class TabsPage {
       icon: 'information'
     }
   ];
+
+  ngOnInit(): void {
+  }
 
   constructor(
     public toastController: ToastController
@@ -59,5 +61,4 @@ export class TabsPage {
     });
     toast.present();
   }
-
 }
