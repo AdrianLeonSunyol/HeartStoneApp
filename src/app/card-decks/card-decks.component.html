@@ -8,15 +8,23 @@
 </ion-header>
 
 
-<ion-content padding>
-  <div id="container">
+<ion-content [fullscreen]="true">
+  <div>
     <ion-list>
-      <ion-item *ngFor="let cardDeck of cardDecks">
-        <ion-avatar slot="start">
-          <img class="btn" src="{{'../../assets/images/'+ cardDeck +'.png'}}" (click)="selectCard" />
-        </ion-avatar>
+      <app-card-deck *ngFor="let cardDeck of cardDecks" 
+      [myCardDeck]="cardDeck" (clicked)="select($event)">  
+      </app-card-deck>
+    </ion-list>
+    <p>
+      Selected Card decks:
+      <span *ngFor="let name of selectedCDS">{{name}}&nbsp;</span>
+    </p>
+    
+    <p>Cards</p>
+    <ion-list *ngFor="let carta of cartas">
+      <ion-item>
         <ion-label>
-          <h2>{{cardDeck}}</h2>
+          <h2>{{carta}}</h2>
         </ion-label>
       </ion-item>
     </ion-list>
