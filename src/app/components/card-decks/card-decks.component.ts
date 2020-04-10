@@ -30,21 +30,14 @@ export class CardDecksComponent implements OnInit {
   }
 
   findCartas = (name: string, action: string): void => {
+    let carta: CardDeck = this.cardDecks.find((card: CardDeck): boolean => { return card.name === name});
     if (action === "add") {
-      this.cardDecks.find((card: CardDeck) => {
-        if (card.name === name) {
-          for (let carta of card.cards) 
-            this.cartas.push(carta);
-        }
-      });
+      for (let carts of carta.cards)
+        this.cartas.push(carts);
     } else {
-      this.cardDecks.find((card: CardDeck) => {
-        if (card.name === name) {
-          for (let carta of card.cards) 
-            if (this.cartas.indexOf(carta) !== -1)
-              this.cartas.splice(this.cartas.indexOf(carta), 1);
-        }
-      });
+      for (let carts of carta.cards) 
+        if (this.cartas.indexOf(carts) !== -1)
+          this.cartas.splice(this.cartas.indexOf(carts), 1);
     }
   } 
 
