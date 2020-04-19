@@ -9,9 +9,14 @@ import { ToastController } from '@ionic/angular';
 export class MenuComponent implements OnInit {
   readonly pages = [
     {
-      title: 'Card Decks',
-      url: '/tabs/cards',
-      icon: 'home'
+      title: 'Práctica 2 Componentes',
+      url: '/tabs/componentes',
+      icon: 'hammer-outline'
+    },
+    {
+      title: 'Práctica 3 Servicios',
+      url: '/tabs/servicios',
+      icon: 'briefcase-outline'
     },
     {
       title: 'About',

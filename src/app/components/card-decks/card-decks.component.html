@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Card Decks</ion-title>
+    <ion-title>Pr2: Componentes</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
 <ion-content [fullscreen]="true">
   <div>
     <ion-list>
-      <app-card-deck *ngFor="let cardDeck of cardDecks" 
+      <app-card-deck *ngFor="let cardDeck of cardDecksPr2" 
       [myCardDeck]="cardDeck" (clicked)="select($event)">  
       </app-card-deck>
     </ion-list>

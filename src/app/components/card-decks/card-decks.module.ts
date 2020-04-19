@@ -16,5 +16,5 @@ import { CardDeckComponent } from '../card-deck/card-deck.component';
   declarations: [CardDecksComponent, CardDeckComponent],
 })
 export class CardDecksModule {
-  
- }
+  constructor() {}
+}

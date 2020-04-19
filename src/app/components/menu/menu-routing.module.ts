@@ -8,12 +8,22 @@ const routes: Routes = [
     component: MenuComponent,
     children: [
       {
-        path: 'cards',
+        path: 'componentes',
         children: [
           {
             path: '',
             loadChildren: () =>
               import('../card-decks/card-decks.module').then(m => m.CardDecksModule)
+          }
+        ]
+      },
+      {
+        path: 'servicios',
+        children: [
+          {
+            path: '',
+            loadChildren: () => 
+            import('../card-list-page/card-list-page.module').then(m => m.CardListPageModule)
           }
         ]
       },
@@ -29,14 +39,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/cards',
+        redirectTo: '/tabs/componentes',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/cards',
+    redirectTo: '/tabs/componentes',
     pathMatch: 'full'
   }
 ];

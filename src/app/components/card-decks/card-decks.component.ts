@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardDeck } from '../../models';
+import { ICardDeckPractica2 } from 'src/app/models/ICardDeckPractica2';
 
 @Component({
   selector: 'app-card-decks',
@@ -7,22 +7,25 @@ import { CardDeck } from '../../models';
   styleUrls: ['./card-decks.component.scss'],
 })
 export class CardDecksComponent implements OnInit {
+  public cardDecksPr2: ICardDeckPractica2[] = [];
+  
   readonly mockupFile: string = '../assets/data/carddecks.json';
-  cardDecks: CardDeck[];
   selectedCDS: string[] = [];
   cartas: string[] = [];
 
+  //inyectamos
   constructor() {}
 
   ngOnInit() {
     this.getData();
   }
 
+
   public getData = async () => {
     await fetch(this.mockupFile)
     .then(res => res.json())
     .then(json => {
-      this.cardDecks = json as CardDeck[];
+      this.cardDecksPr2 = json as ICardDeckPractica2[];
     })
     .catch(err => {
       //print err
@@ -30,7 +33,7 @@ export class CardDecksComponent implements OnInit {
   }
 
   findCartas = (name: string, action: string): void => {
-    let carta: CardDeck = this.cardDecks.find((card: CardDeck): boolean => { return card.name === name});
+    let carta: ICardDeckPractica2 = this.cardDecksPr2.find((card: ICardDeckPractica2): boolean => { return card.name === name});
     if (action === "add") {
       for (let carts of carta.cards)
         this.cartas.push(carts);
