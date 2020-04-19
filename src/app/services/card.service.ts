@@ -7,7 +7,7 @@ import { CardDeck, ICardDeck } from "../models";
   providedIn: 'root'
 })
 export class CardService {
-  private readonly HS_API_URL: string = "https://omgvamp-hearthstone-v1.p.rapidapi.com/info";
+  private readonly HS_API_URL: string = "https://omgvamp-hearthstone-v1.p.rapidapi.com";
   private readonly API_KEY: string = "91285ca99dmsh8521dc3af48668bp1a4760jsnae3e61622850";
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class CardService {
 
   getAllCardDecks = (): Observable<CardDeck[]> => {
     return this.http.get<CardDeck[]>(
-      this.HS_API_URL + 'info', { headers: this.headers }
+      this.HS_API_URL + '/info', { headers: this.headers }
     );
   }
 }

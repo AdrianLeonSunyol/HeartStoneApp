@@ -20,6 +20,7 @@ export class CardListPageComponent {
 
   constructor(private cardSrv: CardService) {
     this.getCardDecks();
+    console.log(this.cardDecks);
   }
 
   private extractAllowedDecks(cardDecks: CardDeck[]) {
@@ -29,7 +30,6 @@ export class CardListPageComponent {
   }
 
   private getCardDecks = async () => {
-    console.log("que pasa");
     this.cardSrv.getAllCardDecks().subscribe(
       (cdSrv: CardDeck[]) => {
         this.extractAllowedDecks(cdSrv);

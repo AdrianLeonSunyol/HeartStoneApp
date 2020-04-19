@@ -8,8 +8,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list *ngFor="let cardDeck of cardDecks">
-    <label>hola</label>
-    <!-- <app-card-list *ngFor="let cardDeck of cardDecks" [listName]="cardDeck.name" [items]="cardDeck.types"> -->
+
+  <ion-list>
+    <app-card-list *ngFor="let cardDeck of cardDecks" 
+      [listName]="cardDeck.name" 
+      [items]="cardDeck.types"
+    ></app-card-list>
   </ion-list>
+
 </ion-content>
