@@ -11,15 +11,14 @@
 <ion-content [fullscreen]="true">
   <div>
     <ion-list>
-      <app-card-deck *ngFor="let cardDeck of cardDecksPr2" 
-      [myCardDeck]="cardDeck" (clicked)="select($event)">  
+      <app-card-deck *ngFor="let cardDeck of cardDecksPr20" [myCardDeck]="cardDeck" (clicked)="select($event)">
       </app-card-deck>
     </ion-list>
     <p>
       Selected Card decks:
       <span *ngFor="let name of selectedCDS">{{name}}&nbsp;</span>
     </p>
-    
+
     <p>Cards</p>
     <ion-list *ngFor="let carta of cartas">
       <ion-item>

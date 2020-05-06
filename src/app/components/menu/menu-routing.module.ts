@@ -22,8 +22,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => 
-            import('../card-list-page/card-list-page.module').then(m => m.CardListPageModule)
+            loadChildren: () =>
+              import('../card-list-page/card-list-page.module').then(m => m.CardListPageModule)
           }
         ]
       },
@@ -34,6 +34,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../about/about.module').then(m => m.AboutModule)
+          }
+        ]
+      },
+      {
+        path: 'card-listing',
+        children: [
+          {
+            path: ':cardDeckGroup/:cardDeck',
+            loadChildren: () =>
+              import('../card-listing/card-listing.module').then(m => m.CardListingPageModule)
           }
         ]
       },
@@ -52,7 +62,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)], 
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class MenuRoutingModule { }

@@ -19,10 +19,15 @@ export class MenuComponent implements OnInit {
       icon: 'briefcase-outline'
     },
     {
+      title: 'Práctica 4 Enrutado',
+      url: '/tabs/card-listing',
+      icon: 'document-text-outline'
+    },
+    {
       title: 'About',
       url: '/tabs/about',
       icon: 'information'
-    }
+    },
   ];
 
   ngOnInit(): void {
@@ -30,7 +35,7 @@ export class MenuComponent implements OnInit {
 
   constructor(
     public toastController: ToastController
-    ) {}
+  ) { }
 
   async closeApp() {
     const toast = await this.toastController.create({
