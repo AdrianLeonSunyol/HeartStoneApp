@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { MenuComponent } from './menu.component';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginPage } from '../login/login.page';
 
 const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('../login/login.module').then(m => m.LoginPageModule)
+  },
   {
     path: 'tabs',
     component: MenuComponent,
@@ -56,7 +61,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/componentes',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];

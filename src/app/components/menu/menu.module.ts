@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     IonicModule,
     FormsModule,
-    MenuRoutingModule
+    MenuRoutingModule,
   ],
   declarations: [MenuComponent]
 })

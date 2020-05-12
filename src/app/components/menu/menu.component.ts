@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -34,7 +35,8 @@ export class MenuComponent implements OnInit {
   }
 
   constructor(
-    public toastController: ToastController
+    public toastController: ToastController,
+    private router: Router
   ) { }
 
   async closeApp() {
@@ -54,7 +56,8 @@ export class MenuComponent implements OnInit {
           icon: 'backspace',
           role: 'cerrar',
           handler: () => {
-            navigator['app'].exitApp();
+            //navigator['app'].exitApp();
+            this.router.navigate(['/'])
           }
         }
       ]

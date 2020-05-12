@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./components/menu/menu.module').then(m => m.MenuModule)
-  },
+  }
 ];
 @NgModule({
   imports: [
