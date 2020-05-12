@@ -10,6 +10,11 @@ import { CardService } from 'src/app/services';
 export class CardListComponent {
   @Input() items: any[];
   @Input() listName: string;
+  @Input() navigateTo: any;
 
- constructor() {}
+  constructor() { }
+
+  generateURL(group: string, deck: string) {
+    return "/tabs/card-listing/" + group + "/" + deck;
+  }
 }

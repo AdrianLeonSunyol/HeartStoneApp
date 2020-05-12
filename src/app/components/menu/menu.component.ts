@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -19,18 +20,24 @@ export class MenuComponent implements OnInit {
       icon: 'briefcase-outline'
     },
     {
+      title: 'Práctica 4 Enrutado',
+      url: '/tabs/card-listing',
+      icon: 'document-text-outline'
+    },
+    {
       title: 'About',
       url: '/tabs/about',
       icon: 'information'
-    }
+    },
   ];
 
   ngOnInit(): void {
   }
 
   constructor(
-    public toastController: ToastController
-    ) {}
+    public toastController: ToastController,
+    private router: Router
+  ) { }
 
   async closeApp() {
     const toast = await this.toastController.create({
@@ -49,7 +56,8 @@ export class MenuComponent implements OnInit {
           icon: 'backspace',
           role: 'cerrar',
           handler: () => {
-            navigator['app'].exitApp();
+            //navigator['app'].exitApp();
+            this.router.navigate(['/'])
           }
         }
       ]

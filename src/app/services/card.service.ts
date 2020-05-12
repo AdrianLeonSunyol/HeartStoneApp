@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { CardDeck, ICardDeck } from "../models";
+import { CardDeck, ICardDeck, ICard } from "../models";
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,11 @@ export class CardService {
     return this.http.get<CardDeck[]>(
       this.HS_API_URL + '/info', { headers: this.headers }
     );
+  }
+
+  getCardByDeck(cardDeckGroup: string, cardDeck: string): Observable<ICard[]> {
+    return this.http.get<ICard[]>(`${this.HS_API_URL}/cards/${cardDeckGroup}/${cardDeck}`, {
+      headers: this.headers
+    })
   }
 }

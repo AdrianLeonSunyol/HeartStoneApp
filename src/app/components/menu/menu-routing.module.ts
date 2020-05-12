@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { MenuComponent } from './menu.component';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginPage } from '../login/login.page';
 
 const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('../login/login.module').then(m => m.LoginPageModule)
+  },
   {
     path: 'tabs',
     component: MenuComponent,
@@ -22,8 +27,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => 
-            import('../card-list-page/card-list-page.module').then(m => m.CardListPageModule)
+            loadChildren: () =>
+              import('../card-list-page/card-list-page.module').then(m => m.CardListPageModule)
           }
         ]
       },
@@ -38,6 +43,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'card-listing',
+        children: [
+          {
+            path: ':cardDeckGroup/:cardDeck',
+            loadChildren: () =>
+              import('../card-listing/card-listing.module').then(m => m.CardListingPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/componentes',
         pathMatch: 'full'
@@ -46,13 +61,13 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/componentes',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)], 
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class MenuRoutingModule { }

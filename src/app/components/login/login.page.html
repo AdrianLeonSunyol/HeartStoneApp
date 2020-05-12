@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item no-padding class="animated fadeInUp">
+  <ion-label position="floating">
+    <ion-icon name="lock" item-start>
+      Etiqueta del campo del formulario
+    </ion-icon>
+  </ion-label>
+  <form [formGroup]="formLogin" (ngSubmit)="doLogin()">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="dark" type="submit" (click)="doLogin"
+        [disabled]="!formLogin.valid" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Entrar
+      </ion-button>
+    </div>
+  </form>
+</ion-item>
+<p ion-text class="text08" *ngIf="formLogin.get('email').touched && formLogin.get('password').hasError('validador')">
+  <ion-text color="warning">Mensaje de error</ion-text>
+</p>
